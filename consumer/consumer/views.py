@@ -38,6 +38,9 @@ def receive_message(request):
 
     # Consume messages from the Kafka topic
     messages = []
+    for message in consumer:
+        # Process the message
+        messages.append(message.value)
 
     consumer.close()
 
